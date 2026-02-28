@@ -82,3 +82,7 @@ The plugin sends a POST request to your `webhookUrl` with the following JSON str
 ```
 
 Events: `product_liked`, `cart_update`.
+
+## Screenshots
+<img width="1365" height="599" alt="image" src="https://github.com/user-attachments/assets/a00e97ad-e8d7-42bf-8361-6ac10e140e0d" />
+
