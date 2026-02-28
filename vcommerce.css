@@ -17,7 +17,6 @@
 
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    background-color: var(--background-dark);
 }
 #vcommerce-plugin {
     width: 100%;
@@ -289,4 +288,5 @@ body {
     animation: fadeInUp 0.8s ease forwards;
 
 }
+
 
