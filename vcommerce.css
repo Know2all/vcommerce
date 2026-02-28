@@ -1,3 +1,24 @@
+:root {
+    --primary-color: #0d7ff2;
+    --background-dark: #000;
+    --text-white: #ffffff;
+    --text-muted: rgba(255, 255, 255, 0.7);
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --safe-area-inset-bottom: env(safe-area-inset-bottom, 20px);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--background-dark);
+}
 #vcommerce-plugin {
     width: 100%;
     margin-bottom: 40px;
@@ -268,3 +289,4 @@
     animation: fadeInUp 0.8s ease forwards;
 
 }
+
