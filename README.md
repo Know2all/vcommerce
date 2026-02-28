@@ -38,17 +38,22 @@ const products = [
     }
 ];
 
-const vcommerce = new Vcommerce('vcommerce-shop', {
-    products: products,
-    logo:"SHOP NAME",
-    title: 'New Arrivals',
-    webhookUrl: 'https://your-wesite.com/webhook.php',
-    onWebhookSuccess: (data) => {
-        console.log('Webhook triggered successfully:', data);
-    }
-});
+async function initPlugin() {
+    const response = await fetch('/webhook.php?action=get_products');
+    const products = await response.json();
 
-vcommerce.init();
+    const vcommerce = new Vcommerce('vcommerce-instance-1', {
+        products: products,
+        logo:"GANAPATHY CRACKERS",
+        title: 'Live Shop Reels',
+        webhookUrl: '/webhook.php', // Self-pointing webhook for demo
+        onWebhookSuccess: (data) => {
+            console.log(data);
+        }
+    });
+    vcommerce.init();
+}
+document.addEventListener('DOMContentLoaded', initPlugin);
 ```
 
 ## Configuration Options
