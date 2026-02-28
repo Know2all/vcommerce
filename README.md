@@ -7,21 +7,17 @@ Add the following tags to the `<head>` section of your HTML:
 
 ```html
 <!-- Vcommerce Styles -->
-<link rel="stylesheet" href="https://cdn.example.com/vcommerce/vcommerce.css">
-
-<!-- Vcommerce Script -->
-<script src="https://cdn.example.com/vcommerce/vcommerce.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Know2all/vcommerce@v1.5/vcommerce.css">
+<!-- The Plugin Script -->
+<script src="https://cdn.jsdelivr.net/gh/Know2all/vcommerce@v1.5/vcommerce.js"></script>
 ```
-
-> [!NOTE]
-> Replace `https://cdn.example.com/vcommerce/` with the actual path to the hosted files.
 
 ## 2. Add the Container
 
 Place an empty `div` where you want the reels to appear:
 
 ```html
-<div id="vcommerce-shop"></div>
+<div id="vcommerce-instance-1"></div>
 ```
 
 ## 3. Initialize the Plugin
@@ -44,8 +40,9 @@ const products = [
 
 const vcommerce = new Vcommerce('vcommerce-shop', {
     products: products,
+    logo:"SHOP NAME",
     title: 'New Arrivals',
-    webhookUrl: 'https://your-api.com/webhook',
+    webhookUrl: 'https://your-wesite.com/webhook.php',
     onWebhookSuccess: (data) => {
         console.log('Webhook triggered successfully:', data);
     }
@@ -60,6 +57,7 @@ vcommerce.init();
 | :--- | :--- | :--- | :--- |
 | `products` | Array | `[]` | List of product objects to display. |
 | `title` | String | `'Trending Reels'` | The heading displayed above the reels. |
+| `logo` | String | `'Shop Name'` | The shop name shows on top left corner of reel. |
 | `webhookUrl` | String | `null` | Endpoint to send Like and Cart events. |
 | `onWebhookSuccess` | Function | `null` | Callback after a successful webhook call. |
 | `autoLoadDependencies` | Boolean | `true` | Automatically loads Google Fonts and Material Icons. |
